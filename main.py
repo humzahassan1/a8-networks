@@ -2,7 +2,7 @@ import socket
 
 # Try this with example.com first, but try changing it to a different site after
 # you get it working.
-hostname = "example.com"
+hostname = "www.google.com"
 
 
 # Do not modify this function
@@ -34,8 +34,12 @@ def make_http_request(ip, port):
 # (This variable is defined at the top of this file if you want to play with it)
 #
 # Hint: This is meant for you to use Google to figure out.
+ip_addy = socket.gethostbyname(hostname)
 
 # Next, call make_http_request with the correct parameters and then print the response
 # This response should look a lot like the in-class example of "curl", and start with
 # "HTTP/1.1 200 OK". Rememeber, we're making an HTTP request, so from that you should
 # be able to figure out what port to use.
+response = make_http_request(ip_addy, 80)
+
+print(response)
